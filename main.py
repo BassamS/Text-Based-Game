@@ -1,5 +1,7 @@
 import random
 
+import symbol
+
 MAX_LINES = 3
 MAX_BET = 100
 MIN_BET = 1
@@ -13,6 +15,22 @@ symbol_count = {
     "C": 6,
     "D": 8
 }
+
+symbol_value = {
+    "A": 5,
+    "B": 4,
+    "C": 3,
+    "D": 2
+}
+
+
+def check_winnings(columns, lines, bet, values):
+    for line in range(lines):
+        symbol = columns[0][lines]
+        for column in columns:
+            symbol_to_check = column[line]
+            if symbol != symbol_to_check:
+                break
 
 
 def get_slot_machine_spin(rows, cols, symbols):
